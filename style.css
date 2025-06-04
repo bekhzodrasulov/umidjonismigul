@@ -168,3 +168,140 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ====== PHONE (до 600px) ====== */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .date-section h2 {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .names {
+    font-size: 22px;
+  }
+
+  .time {
+    font-size: 24px;
+  }
+
+  .calendar table {
+    font-size: 18px;
+  }
+
+  .calendar th,
+  .calendar td {
+    width: 30px;
+    height: 30px;
+  }
+
+  .location h3 {
+    font-size: 20px;
+  }
+
+  .location p {
+    font-size: 16px;
+  }
+
+  .location-icon-box i {
+    font-size: 36px;
+  }
+
+  .location-label {
+    font-size: 16px;
+    padding: 5px 15px;
+  }
+
+  .countdown {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .countdown span {
+    font-size: 22px;
+  }
+
+  .countdown p {
+    font-size: 16px;
+  }
+
+  #playButton {
+    font-size: 24px;
+  }
+}
+
+/* ====== TABLET (601px – 1024px) ====== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero h1 {
+    font-size: 60px;
+  }
+
+  .date-section h2 {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 17px;
+    padding: 8px;
+  }
+
+  .names {
+    font-size: 25px;
+  }
+
+  .time {
+    font-size: 28px;
+  }
+
+  .calendar table {
+    font-size: 22px;
+  }
+
+  .calendar th,
+  .calendar td {
+    width: 35px;
+    height: 35px;
+  }
+
+  .location h3 {
+    font-size: 24px;
+  }
+
+  .location p {
+    font-size: 17px;
+  }
+
+  .location-icon-box i {
+    font-size: 42px;
+  }
+
+  .location-label {
+    font-size: 18px;
+    padding: 6px 18px;
+  }
+
+  .countdown {
+    gap: 15px;
+    padding: 12px 25px;
+  }
+
+  .countdown span {
+    font-size: 26px;
+  }
+
+  .countdown p {
+    font-size: 17px;
+  }
+
+  #playButton {
+    font-size: 26px;
+  }
+}
