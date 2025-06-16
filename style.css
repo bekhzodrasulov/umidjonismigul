@@ -1,9 +1,804 @@
-body {
+body,
+html {
   margin: 0;
-  font-family: "Cormorant Infant", serif;
-  background: #f9f8f6;
-  color: #000;
+  background: #8e9b91;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+/* Общие стили для цветов */
+.rose-left-header,
+.rose-right-header,
+.rose-middle-data,
+.rose-middle,
+.rose-left-footer,
+.rose-right-footer {
+  max-width: 250px;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Позиционирование (примерное — вы можете доработать под ваш макет) */
+.rose-left-header {
+  position: absolute;
+  top: 0;
+  left: -193px;
+}
+
+.rose-right-header {
+  position: absolute;
+  top: 126px;
+  right: -45px;
+}
+
+.rose-middle-data {
+  position: absolute;
+  left: -38px;
+  margin-top: 30px;
+}
+.rose-middle {
+}
+
+.rose-left-footer {
+  position: absolute;
+  bottom: 110px;
+  left: -194px;
+}
+
+.rose-right-footer {
+  position: absolute;
+  bottom: 0px;
+  right: -210px;
+}
+/* ====== PHONE (до 600px) ====== */
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 130%;
+    margin: 0;
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .date-section {
+    padding: 20px;
+  }
+
+  .date-section h2 {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  .hurmat-bilan {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .names {
+    font-family: "Cormorant Infant", serif;
+    font-size: 35px;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 30px;
+  }
+
+  .underline {
+    color: #000;
+  }
+
+  .time {
+    font-size: 32px;
+    margin: 10px 0;
+  }
+
+  .calendar table {
+    border-collapse: separate;
+    border-spacing: 10px 10px; /* горизонталь, вертикаль */
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .calendar th,
+  .calendar td {
+    width: 40px;
+    height: 40px;
+  }
+
+  .highlight {
+    position: relative;
+    font-weight: bold;
+  }
+
+  .highlight::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 35px;
+    transform: translate(-50%, -50%);
+    border: 1.5px solid red;
+    border-radius: 50%;
+  }
+
+  .location-restaurant {
+    font-size: 40px;
+  }
+
+  .restaurant-name {
+    font-family: "Great Vibes", cursive;
+    font-size: 40px;
+  }
+
+  .location {
+    padding: 30px 20px;
+  }
+
+  .location-address {
+    font-size: 18px;
+  }
+
+  .location-icon-box i {
+    font-size: 36px;
+  }
+
+  .location-icon {
+    height: 130px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .location-label {
+    font-size: 16px;
+    padding: 5px 15px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .location-welcome {
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .footer {
+    padding: 20px;
+    font-style: italic;
+  }
+  .music-control {
+    margin-bottom: 20px;
+  }
+
+  #playButton {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .location-icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .location-icon-box i {
+    font-size: 48px;
+    color: #000;
+    margin-bottom: 10px;
+  }
+
+  .location-label {
+    border: 2px solid #000;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #000;
+    font-family: "Cormorant Infant", serif;
+    font-size: 20px;
+  }
+  .countdown-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+
+  .countdown {
+    width: 550px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    gap: 40px;
+    padding: 15px 30px;
+    background-color: transparent;
+    font-family: "Cormorant Infant", serif;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: countdownFadeIn 1.5s ease-out 0.5s forwards;
+  }
+
+  .countdown::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -1px;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/timerounded.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    opacity: 0;
+    animation: bgFadeIn 2s ease-out 1s forwards;
+  }
+
+  /* Анимация контейнера .countdown */
+  @keyframes countdownFadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Анимация фона (svg изображения) */
+  @keyframes bgFadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .countdown div {
+    text-align: center;
+  }
+
+  .countdown span {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .countdown p {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .rose-right-header {
+    max-width: 220px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-out;
+  }
+
+  .rose-left-header,
+  .rose-middle-data,
+  .rose-middle,
+  .rose-left-footer,
+  .rose-right-footer {
+    max-width: 450px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  /* Анимации для появления слева */
+  .rose-left-header,
+  .rose-left-footer {
+    animation-name: slideInLeft;
+    z-index: -1;
+  }
+
+  /* Анимации для появления справа */
+  .rose-right-header,
+  .rose-right-footer {
+    animation-name: slideInRight;
+  }
+
+  /* Анимация сверху вниз */
+  .rose-middle-data {
+    animation-name: slideInTop;
+  }
+
+  /* Анимация снизу вверх */
+  .rose-middle {
+    animation-name: slideInBottom;
+  }
+
+  /* Keyframes */
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100px) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100px) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInTop {
+    0% {
+      transform: translateY(-100px) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInBottom {
+    0% {
+      transform: translateY(100px) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
+  }
+
+  .fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Задержки для поочерёдного появления */
+  .delay-1 {
+    transition-delay: 1s;
+  }
+  .delay-2 {
+    transition-delay: 1s;
+  }
+  .delay-3 {
+    transition-delay: 1s;
+  }
+  .delay-4 {
+    transition-delay: 0.8s;
+  }
+  .delay-5 {
+    transition-delay: 1s;
+  }
+  .delay-6 {
+    transition-delay: 1s;
+  }
+  .delay-7 {
+    transition-delay: 1s;
+  }
+  /* добавь больше при необходимости */
+}
+
+/* ====== TABLET (601px – 1024px) ====== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 130%;
+    margin: 0;
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .date-section {
+    padding: 20px;
+  }
+
+  .date-section h2 {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  .hurmat-bilan {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .names {
+    font-family: "Cormorant Infant", serif;
+    font-size: 35px;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 30px;
+  }
+
+  .underline {
+    color: #000;
+  }
+
+  .time {
+    font-size: 32px;
+    margin: 10px 0;
+  }
+
+  .calendar table {
+    border-collapse: separate;
+    border-spacing: 10px 10px; /* горизонталь, вертикаль */
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .calendar th,
+  .calendar td {
+    width: 40px;
+    height: 40px;
+  }
+
+  .highlight {
+    position: relative;
+    font-weight: bold;
+  }
+
+  .highlight::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 35px;
+    transform: translate(-50%, -50%);
+    border: 1.5px solid red;
+    border-radius: 50%;
+  }
+
+  .location-restaurant {
+    font-size: 40px;
+  }
+
+  .restaurant-name {
+    font-family: "Great Vibes", cursive;
+    font-size: 40px;
+  }
+
+  .location {
+    padding: 30px 20px;
+  }
+
+  .location-address {
+    font-size: 18px;
+  }
+
+  .location-icon-box i {
+    font-size: 36px;
+  }
+
+  .location-icon {
+    height: 130px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .location-label {
+    font-size: 16px;
+    padding: 5px 15px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .location-welcome {
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .footer {
+    padding: 20px;
+    font-style: italic;
+  }
+  .music-control {
+    margin-bottom: 20px;
+  }
+
+  #playButton {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .location-icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .location-icon-box i {
+    font-size: 48px;
+    color: #000;
+    margin-bottom: 10px;
+  }
+
+  .location-label {
+    border: 2px solid #000;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #000;
+    font-family: "Cormorant Infant", serif;
+    font-size: 20px;
+  }
+  .countdown-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+
+  .countdown {
+    width: 550px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    gap: 40px;
+    padding: 15px 30px;
+    background-color: transparent;
+    font-family: "Cormorant Infant", serif;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: countdownFadeIn 1.5s ease-out 0.5s forwards;
+  }
+
+  .countdown::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -1px;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/timerounded.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    opacity: 0;
+    animation: bgFadeIn 2s ease-out 1s forwards;
+  }
+
+  /* Анимация контейнера .countdown */
+  @keyframes countdownFadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Анимация фона (svg изображения) */
+  @keyframes bgFadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .countdown div {
+    text-align: center;
+  }
+
+  .countdown span {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .countdown p {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 2s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .rose-right-header {
+    max-width: 220px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  .rose-left-header,
+  .rose-middle-data,
+  .rose-middle,
+  .rose-left-footer,
+  .rose-right-footer {
+    max-width: 450px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  /* Анимации для появления слева */
+  .rose-left-header,
+  .rose-left-footer {
+    animation-name: slideInLeft;
+    z-index: -1;
+  }
+
+  /* Анимации для появления справа */
+  .rose-right-header,
+  .rose-right-footer {
+    animation-name: slideInRight;
+  }
+
+  /* Анимация сверху вниз */
+  .rose-middle-data {
+    animation-name: slideInTop;
+  }
+
+  /* Анимация снизу вверх */
+  .rose-middle {
+    animation-name: slideInBottom;
+  }
+
+  /* Keyframes */
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100px) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100px) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInTop {
+    0% {
+      transform: translateY(-100px) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInBottom {
+    0% {
+      transform: translateY(100px) scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
+  }
+
+  .fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Задержки для поочерёдного появления */
+  .delay-1 {
+    transition-delay: 1s;
+  }
+  .delay-2 {
+    transition-delay: 1s;
+  }
+  .delay-3 {
+    transition-delay: 1s;
+  }
+  .delay-4 {
+    transition-delay: 0.8s;
+  }
+  .delay-5 {
+    transition-delay: 1s;
+  }
+  .delay-6 {
+    transition-delay: 1s;
+  }
+  .delay-7 {
+    transition-delay: 1s;
+  }
+  /* добавь больше при необходимости */
 }
 
 .hero {
@@ -13,6 +808,8 @@ body {
 .hero h1 {
   font-family: "Great Vibes", cursive;
   font-size: 80px;
+  font-weight: 500;
+  line-height: 130%;
   margin: 0;
 }
 
@@ -25,21 +822,31 @@ body {
 }
 
 .date-section h2 {
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .text {
-  font-size: 18px;
+  font-size: 20px;
   max-width: 600px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 5px;
+}
+
+.hurmat-bilan {
+  font-size: 20px;
+  margin-top: 30px;
 }
 
 .names {
-  font-size: 28px;
+  font-family: "Cormorant Infant", serif;
+  font-size: 35px;
+  font-weight: 400;
   font-style: italic;
   margin-top: 30px;
-  text-decoration: underline;
+}
+
+.underline {
+  color: #000;
 }
 
 .time {
@@ -51,7 +858,7 @@ body {
   border-collapse: separate;
   border-spacing: 10px 10px; /* горизонталь, вертикаль */
   margin: 0 auto;
-  font-size: 25px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -69,7 +876,7 @@ body {
 .highlight::before {
   content: "";
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   width: 40px;
   height: 35px;
@@ -78,16 +885,44 @@ body {
   border-radius: 50%;
 }
 
+.location-restaurant {
+  font-size: 40px;
+}
+
+.restaurant-name {
+  font-family: "Great Vibes", cursive;
+  font-size: 40px;
+}
+
 .location {
   padding: 30px 20px;
 }
 
-.location h3 {
-  font-size: 26px;
+.location-address {
+  font-size: 18px;
 }
 
-.location p {
+.location-icon-box i {
+  font-size: 36px;
+}
+
+.location-icon {
+  height: 130px;
+  position: relative;
+  z-index: 3;
+}
+
+.location-label {
+  font-size: 16px;
+  padding: 5px 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.location-welcome {
   font-size: 18px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .footer {
@@ -120,11 +955,11 @@ body {
 
 .location-label {
   border: 2px solid #000;
-  padding: 6px 20px;
+  padding: 10px 30px;
   border-radius: 30px;
   text-decoration: none;
   color: #000;
-  font-family: "Playfair Display", serif;
+  font-family: "Cormorant Infant", serif;
   font-size: 20px;
 }
 .countdown-container {
@@ -134,13 +969,59 @@ body {
 }
 
 .countdown {
+  width: 550px;
+  height: 150px;
+  position: relative;
   display: flex;
-  gap: 20px;
+  gap: 40px;
   padding: 15px 30px;
-  border: 2px solid #000;
-  border-radius: 40px;
-  background: #fff;
-  font-family: "Playfair Display", serif;
+  background-color: transparent;
+  font-family: "Cormorant Infant", serif;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: countdownFadeIn 1.5s ease-out 0.5s forwards;
+}
+
+.countdown::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: -1px;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/timerounded.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  opacity: 0;
+  animation: bgFadeIn 2s ease-out 1s forwards;
+}
+
+/* Анимация контейнера .countdown */
+@keyframes countdownFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Анимация фона (svg изображения) */
+@keyframes bgFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .countdown div {
@@ -161,7 +1042,7 @@ body {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 2s ease, transform 2s ease;
 }
 
 .fade-in.visible {
@@ -169,139 +1050,47 @@ body {
   transform: translateY(0);
 }
 
-/* ====== PHONE (до 600px) ====== */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 48px;
-  }
-
-  .date-section h2 {
-    font-size: 24px;
-  }
-
-  .text {
-    font-size: 16px;
-    padding: 5px;
-  }
-
-  .names {
-    font-size: 22px;
-  }
-
-  .time {
-    font-size: 24px;
-  }
-
-  .calendar table {
-    font-size: 18px;
-  }
-
-  .calendar th,
-  .calendar td {
-    width: 30px;
-    height: 30px;
-  }
-
-  .location h3 {
-    font-size: 20px;
-  }
-
-  .location p {
-    font-size: 16px;
-  }
-
-  .location-icon-box i {
-    font-size: 36px;
-  }
-
-  .location-label {
-    font-size: 16px;
-    padding: 5px 15px;
-  }
-
-  .countdown {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 20px;
-  }
-
-  .countdown span {
-    font-size: 22px;
-  }
-
-  .countdown p {
-    font-size: 16px;
-  }
-
-  #playButton {
-    font-size: 24px;
-  }
+.rose-right-header {
+  max-width: 220px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
-/* ====== TABLET (601px – 1024px) ====== */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .hero h1 {
-    font-size: 60px;
-  }
+.rose-left-header,
+.rose-middle-data,
+.rose-middle,
+.rose-left-footer,
+.rose-right-footer {
+  max-width: 450px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
 
-  .date-section h2 {
-    font-size: 30px;
-  }
+/* Анимации для появления слева */
+.rose-left-header,
+.rose-left-footer {
+  animation-name: slideInLeft;
+  z-index: -1;
+}
 
-  .text {
-    font-size: 17px;
-    padding: 8px;
-  }
+/* Анимации для появления справа */
+.rose-right-header,
+.rose-right-footer {
+  animation-name: slideInRight;
+}
 
-  .names {
-    font-size: 25px;
-  }
+/* Анимация сверху вниз */
+.rose-middle-data {
+  animation-name: slideInTop;
+}
 
-  .time {
-    font-size: 28px;
-  }
-
-  .calendar table {
-    font-size: 22px;
-  }
-
-  .calendar th,
-  .calendar td {
-    width: 35px;
-    height: 35px;
-  }
-
-  .location h3 {
-    font-size: 24px;
-  }
-
-  .location p {
-    font-size: 17px;
-  }
-
-  .location-icon-box i {
-    font-size: 42px;
-  }
-
-  .location-label {
-    font-size: 18px;
-    padding: 6px 18px;
-  }
-
-  .countdown {
-    gap: 15px;
-    padding: 12px 25px;
-  }
-
-  .countdown span {
-    font-size: 26px;
-  }
-
-  .countdown p {
-    font-size: 17px;
-  }
-
-  #playButton {
-    font-size: 26px;
-  }
+/* Анимация снизу вверх */
+.rose-middle {
+  animation-name: slideInBottom;
 }

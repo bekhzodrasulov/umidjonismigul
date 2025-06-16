@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Great+Vibes&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700"
       rel="stylesheet"
     />
     <link
@@ -17,169 +17,207 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+    <!-- <script>
+      // Блокировать правый клик
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      // Блокировать F12 и другие клавиши
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.key === "F12" ||
+          (e.ctrlKey &&
+            e.shiftKey &&
+            (e.key === "I" || e.key === "J" || e.key === "C")) ||
+          (e.ctrlKey && e.key === "U") ||
+          (e.shiftKey && e.ctrlKey && e.key === "J")
+        ) {
+          e.preventDefault();
+        }
+      });
+    </script> -->
   </head>
   <body>
-    <div class="hero">
-      <svg
-        class="rose rose-top fade-in"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 64 64"
-        width="100"
-        height="100"
-        fill="none"
-        stroke="black"
-        stroke-width="1.5"
-      >
-        <path
-          d="M32 2c4 8 0 12-2 14s-8 4-10 8c-2 4 0 10 6 12 6 2 10 0 14 4s2 12-6 16"
-        />
-        <path d="M26 54c-6-2-8-8-6-14 2-6 6-6 10-8s8-6 6-10-6-4-10-4" />
-      </svg>
-      <h1 calssName="fristWords"><span>U</span>&<span>I</span></h1>
-      <svg
-        class="rose rose-bottom fade-in"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 64 64"
-        width="100"
-        height="100"
-        fill="none"
-        stroke="black"
-        stroke-width="1.5"
-      >
-        <path d="M20 60c0-8 4-12 8-14s10-2 14-6c4-4 6-12 0-16s-10-2-14 2" />
-        <path d="M32 48c-2-6-6-6-10-8s-6-8-2-12c4-4 8-2 12 0" />
-      </svg>
-    </div>
-
-    <div class="date-section fade-in">
-      <div class="music-control">
-        <button id="playButton">▶</button>
-        <audio id="bgMusic" src="music.m4a"></audio>
+    <div class="wrapper">
+      <div class="hero fade-in-on-scroll delay-1">
+        <img class="rose-left-header" src="images/rose12.png" alt="" />
+        <h1 calssName="fristWords">
+          <span>U</span
+          ><img style="height: 30px" src="images/vs.png" alt="and" /><span
+            >I</span
+          >
+        </h1>
+        <img class="rose-right-header" src="images/rose5.png" alt="" />
       </div>
-    </div>
 
-    <div class="date-section fade-in">
-      <h2>28/08/2025</h2>
-      <p class="text">
-        Sizni xayotimizning eng go'zal va baxtli onlarida baxtimizga sherik
-        bo'lishingizni istab shodiyonamizga taklif etamiz!
-      </p>
-      <div class="names">Umidjon va Ismigul</div>
-      <div class="time">14:00</div>
-    </div>
-
-    <div class="countdown-container fade-in">
-      <div class="countdown">
-        <div>
-          <span id="days">0</span>
-          <p>kun</p>
-        </div>
-        <div>
-          <span id="hours">0</span>
-          <p>soat</p>
-        </div>
-        <div>
-          <span id="minutes">0</span>
-          <p>daqiqa</p>
-        </div>
-        <div>
-          <span id="seconds">0</span>
-          <p>soniya</p>
+      <div class="date-section fade-in-on-scroll delay-2">
+        <div class="music-control">
+          <button id="playButton">
+            <img
+              style="height: 50px"
+              id="playIcon"
+              src="images/play.png"
+              alt="Play"
+            />
+          </button>
+          <!-- <audio id="bgMusic" src="music.m4a"></audio> -->
+          <audio id="bgMusic" src="wedding.mp3"></audio>
         </div>
       </div>
-    </div>
 
-    <div class="calendar fade-in">
-      <h2>Avgust</h2>
-      <table>
-        <tr>
-          <th>Du</th>
-          <th>Se</th>
-          <th>Cho</th>
-          <th>Pa</th>
-          <th>Ju</th>
-          <th>Sha</th>
-          <th>Ya</th>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>11</td>
-          <td>12</td>
-          <td>13</td>
-          <td>14</td>
-          <td>15</td>
-          <td>16</td>
-          <td>17</td>
-        </tr>
-        <tr>
-          <td>18</td>
-          <td>19</td>
-          <td>20</td>
-          <td>21</td>
-          <td>22</td>
-          <td>23</td>
-          <td>24</td>
-        </tr>
-        <tr>
-          <td>25</td>
-          <td>26</td>
-          <td>27</td>
-          <td class="highlight">28</td>
-          <td>29</td>
-          <td>30</td>
-          <td>31</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="location fade-in">
-      <svg
-        class="rose fade-in"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 64 64"
-        width="100"
-        height="100"
-        fill="none"
-        stroke="black"
-        stroke-width="1.5"
-      >
-        <path d="M40 4c2 6-2 10-6 12s-6 2-8 6-2 10 4 12 10 0 12 4 0 10-6 14" />
-        <path d="M48 52c-4-4-8-6-12-6s-10 2-12-2 2-10 6-12" />
-      </svg>
-      <h1>Restoran</h1>
-      <h3>Navro'z</h3>
-      <div class="location-icon-box">
-        <i class="fas fa-map-marker-alt"></i>
-        <a
-          href="https://yandex.ru/navi/org/34269006821?si=2vcc660yvyxq899jbvb537r7mc"
-          target="_blank"
-          class="location-label"
-          >Lokatsiya</a
-        >
+      <div class="date-section fade-in-on-scroll delay-3">
+        <h2>28/08/2025</h2>
+        <p class="text">
+          Sizni hayotimizning eng go'zal va baxtli onlarida baxtimizga sherik
+          bo'lishingizni istab shodiyonamizga taklif etamiz!
+        </p>
+        <div>
+          <img class="rose-middle-data" src="images/rose14.png" alt="rose" />
+        </div>
+        <div class="hurmat-bilan">Hurmat bilan</div>
+        <div class="names">Umidjon va Ismigul</div>
+        <div class="underline"><hr /></div>
+        <div class="time">14:00</div>
       </div>
-      <p>Farg'ona shahar, Marg'ilon ko'chasi, FNQZ rodom oldida</p>
-      <p><strong> Biz sizni 28 avgust soat 14:00da kutamiz </strong></p>
-    </div>
 
-    <div class="footer fade-in">Hurmat bilan, Shukurovlar oilasi</div>
+      <div class="countdown-container fade-in-on-scroll delay-4">
+        <div class="countdown">
+          <div>
+            <span id="days">0</span>
+            <p>kun</p>
+          </div>
+          <div>
+            <span id="hours">0</span>
+            <p>soat</p>
+          </div>
+          <div>
+            <span id="minutes">0</span>
+            <p>daqiqa</p>
+          </div>
+          <div>
+            <span id="seconds">0</span>
+            <p>soniya</p>
+          </div>
+        </div>
+      </div>
+      <div class="calendar fade-in-on-scroll delay-5">
+        <h2>Avgust</h2>
+        <table>
+          <tr>
+            <th>Du</th>
+            <th>Se</th>
+            <th>Cho</th>
+            <th>Pa</th>
+            <th>Ju</th>
+            <th>Sha</th>
+            <th>Ya</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td class="highlight">28</td>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="fade-in-on-scroll delay-6">
+        <img class="rose-middle" src="images/rose10.png" alt="" />
+      </div>
+
+      <div class="location fade-in-on-scroll delay-7">
+        <p class="location-restaurant">Restoran</p>
+        <h1 class="restaurant-name">Navro'z</h1>
+        <p class="location-address">
+          Farg'ona shahar, Marg'ilon ko'chasi,<br />
+          FNQZ rodom oldida
+        </p>
+        <div class="location-icon-box">
+          <a
+            target="_blank"
+            href="https://yandex.ru/navi/org/34269006821?si=2vcc660yvyxq899jbvb537r7mc"
+            ><img
+              class="location-icon"
+              src="images/location.png"
+              alt="location"
+          /></a>
+          <a
+            href="https://yandex.ru/navi/org/34269006821?si=2vcc660yvyxq899jbvb537r7mc"
+            target="_blank"
+            class="location-label"
+            >Lokatsiya</a
+          >
+          <img class="rose-left-footer" src="images/rose12.png" alt="" />
+        </div>
+        <div>
+          <p class="location-welcome">
+            Biz sizni <br />
+            28 avgust soat 14:00da <br />
+            kutamiz
+          </p>
+          <img class="rose-right-footer" src="images/rose3.png" alt="roses" />
+        </div>
+        <div className="footer fade-in">Hurmat bilan, Shukurovlar oilasi</div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // один раз показать
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      document.querySelectorAll(".fade-in-on-scroll").forEach((elem) => {
+        observer.observe(elem);
+      });
+    </script>
   </body>
 </html>
