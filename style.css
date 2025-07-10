@@ -82,13 +82,13 @@ html {
 .rose-left-footer {
   position: absolute;
   bottom: 110px;
-  left: -165px;
+  left: -144px;
 }
 
 .rose-right-footer {
   position: absolute;
   bottom: 0px;
-  right: -192px;
+  right: -147px;
 }
 
 .footer-link {
@@ -356,7 +356,7 @@ html {
   }
 
   .rose-right-header {
-    max-width: 400px;
+    max-width: 220px;
     opacity: 0;
     transform: scale(0.8);
     animation-fill-mode: forwards;
@@ -367,7 +367,7 @@ html {
 
   .rose-left-footer,
   .rose-right-footer {
-    max-width: 220px;
+    max-width: 350px;
     opacity: 0;
     transform: scale(0.8);
     animation-fill-mode: forwards;
@@ -723,7 +723,7 @@ html {
 
   .rose-left-footer,
   .rose-right-footer {
-    max-width: 400px;
+    max-width: 350px;
     opacity: 0;
     transform: scale(0.8);
     animation-fill-mode: forwards;
@@ -1077,7 +1077,7 @@ html {
 
 .rose-left-footer,
 .rose-right-footer {
-  max-width: 400px;
+  max-width: 350px;
   opacity: 0;
   transform: scale(0.8);
   animation-fill-mode: forwards;
