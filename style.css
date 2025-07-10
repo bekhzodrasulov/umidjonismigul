@@ -92,7 +92,11 @@ html {
 }
 
 .footer-link {
+  margin-top: 10px;
   color: #000;
+  position: absolute;
+  bottom: 0px;
+  z-index: 2;
 }
 /* ====== PHONE (до 600px) ====== */
 
