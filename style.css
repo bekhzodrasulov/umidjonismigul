@@ -82,13 +82,17 @@ html {
 .rose-left-footer {
   position: absolute;
   bottom: 110px;
-  left: -194px;
+  left: -165px;
 }
 
 .rose-right-footer {
   position: absolute;
   bottom: 0px;
-  right: -210px;
+  right: -192px;
+}
+
+.footer-link {
+  color: #000;
 }
 /* ====== PHONE (до 600px) ====== */
 
@@ -199,7 +203,7 @@ html {
   }
 
   .location {
-    padding: 30px 20px;
+    padding: 1px 20px;
   }
 
   .location-address {
@@ -351,7 +355,7 @@ html {
   }
 
   .rose-right-header {
-    max-width: 220px;
+    max-width: 400px;
     opacity: 0;
     transform: scale(0.8);
     animation-fill-mode: forwards;
@@ -360,11 +364,19 @@ html {
     animation-timing-function: ease-out;
   }
 
-  .rose-left-header,
-  .rose-middle-data,
-  .rose-middle,
   .rose-left-footer,
   .rose-right-footer {
+    max-width: 220px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  .rose-left-header,
+  .rose-middle-data,
+  .rose-middle {
     max-width: 450px;
     opacity: 0;
     transform: scale(0.8);
@@ -558,7 +570,7 @@ html {
   }
 
   .location {
-    padding: 30px 20px;
+    padding: 1px 20px;
   }
 
   .location-icon-box i {
@@ -708,11 +720,19 @@ html {
     animation-timing-function: ease-out;
   }
 
-  .rose-left-header,
-  .rose-middle-data,
-  .rose-middle,
   .rose-left-footer,
   .rose-right-footer {
+    max-width: 400px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  .rose-left-header,
+  .rose-middle-data,
+  .rose-middle {
     max-width: 450px;
     opacity: 0;
     transform: scale(0.8);
@@ -904,7 +924,7 @@ html {
 }
 
 .location {
-  padding: 30px 20px;
+  padding: 1px 20px;
 }
 
 .location-icon-box i {
@@ -1054,11 +1074,19 @@ html {
   animation-timing-function: ease-out;
 }
 
-.rose-left-header,
-.rose-middle-data,
-.rose-middle,
 .rose-left-footer,
 .rose-right-footer {
+  max-width: 400px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.rose-left-header,
+.rose-middle-data,
+.rose-middle {
   max-width: 450px;
   opacity: 0;
   transform: scale(0.8);
