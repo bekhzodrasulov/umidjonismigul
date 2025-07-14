@@ -40,3 +40,12 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+  document.body.innerHTML = `
+      <div style="text-align:center; padding: 50px; font-family: sans-serif;">
+        <h2>Доступ только с мобильных устройств 📱</h2>
+        <p>Пожалуйста, откройте сайт на телефоне.</p>
+      </div>
+    `;
+}
