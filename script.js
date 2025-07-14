@@ -45,7 +45,7 @@ if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
   document.body.innerHTML = `
       <div style="text-align:center; padding: 50px; font-family: sans-serif;">
         <h2>Faqat mobil qurilmalardan kirish mumkin 📱</h2>
-        <p>Havolani telefonida oching.</p>
+        <p>Havolani telefonda oching.</p>
         <h2>Доступ только с мобильных устройств 📱</h2>
         <p>Пожалуйста, откройте сайт на телефоне.</p>
         <h2>Only mobile devices are allowed 📱</h2>
